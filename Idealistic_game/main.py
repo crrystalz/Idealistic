@@ -8,8 +8,15 @@ courage = 50
 honor = 50
 deaths = 0
 
-print("IDEALSTIC")
-time.sleep(1.5)
+print(" _____ _____  ______          _      _____  _____ _______ _____ _____  ")
+print(" |_   _|  __ \|  ____|   /\   | |    |_   _|/ ____|__   __|_   _/ ____|")
+print("   | | | |  | | |__     /  \  | |      | | | (___    | |    | || |     ")
+print("   | | | |  | |  __|   / /\ \ | |      | |  \___ \   | |    | || |     ")
+print("  _| |_| |__| | |____ / ____ \| |____ _| |_ ____) |  | |   _| || |____ ")
+print(" |_____|_____/|______/_/    \_\______|_____|_____/   |_|  |_____\_____|")
+time.sleep(2)
+print()
+print()
 print("Welcome, stranger, to the The Forest Of Lost Souls")
 time.sleep(1)
 name = input("What is your name, lost one?")
@@ -22,18 +29,19 @@ print()
 print("...The spirit who welcomed you, leaves you to survive in the forest")
 time.sleep(1)
 
-day = 1
-print("DAY " + str(day))
-print()
-
 encounters = [
-    ["You see a old lady approach you.", "'Help!', she cries. 'I am in need of water.. please!'", "How can I trust you, you ask", "'I'm just an old lady, will you help me?!', she says."],
+    ["You see a old lady approach you.", "'Help!', she cries. 'I am in need of water.. please!'", "How can I trust you, you ask.", "'I'm just an old lady, will you help me?!', she says."],
     ["You approach a lake to collect water when you spot a pot of gold next to a tree.", "You look closer and notice a man in ragged clothes next to the pot", "'Please don't take my gold', the man begs, 'it's all I have'", "You look at the man, you could easily fight him and steal the gold if you wished.", "Will you steal his gold?"],
     ["You spot a cave, it has a gloomy and eerie feel to it.", "You stare at the mouth of the cave, it calls you in, and you wonder what may be inside", "Do you wish to enter the cave?"]
 ]
 
+day = 1
 numbersPicked = []
+
 while True:
+    print()
+    print("DAY " + str(day))
+    print()
 
     if len(numbersPicked) == len(encounters):
         exit()
@@ -109,11 +117,13 @@ while True:
 
             courage += 15
             foolhardy -= 5
+            greed += 10
 
         if yn == 'n':
             print("Afraid of what may lie in the cave you walk past it continuing your journey in the forest.")
             courage -= 15
             foolhardy += 5
+            greed -= 5
 
     time.sleep(1)
     print("Your Compassion " + str(compassion))
@@ -128,3 +138,5 @@ while True:
     time.sleep(1)
     print("Your Deaths " + str(deaths))
     time.sleep(1)
+
+    day += 1
