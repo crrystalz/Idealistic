@@ -32,7 +32,10 @@ time.sleep(1)
 encounters = [
     ["You see a old lady approach you.", "'Help!', she cries. 'I am in need of water.. please!'", "How can I trust you, you ask.", "'I'm just an old lady, will you help me?!', she says."],
     ["You approach a lake to collect water when you spot a pot of gold next to a tree.", "You look closer and notice a man in ragged clothes next to the pot", "'Please don't take my gold', the man begs, 'it's all I have'", "You look at the man, you could easily fight him and steal the gold if you wished.", "Will you steal his gold?"],
-    ["You spot a cave, it has a gloomy and eerie feel to it.", "You stare at the mouth of the cave, it calls you in, and you wonder what may be inside", "Do you wish to enter the cave?"]
+    ["You spot a cave, it has a gloomy and eerie feel to it.", "You stare at the mouth of the cave, it calls you in, and you wonder what may be inside", "Do you wish to enter the cave?"],
+    ["A young wolf approaches you.", "It appears to be an orphan.", "If you help it it may help in upcoming fights, but it will force you to feed it.", "Do you wish to adopt the wolf?"],
+    ["An ogre thunders toward you, he measured up to 8 feet in size and board a massive club.", "Do you fight or run? [fight = y / run = n]"]
+
 ]
 
 day = 1
@@ -124,6 +127,76 @@ while True:
             courage -= 15
             foolhardy += 5
             greed -= 5
+
+    if randomNumber == 3:
+        if yn == 'y':
+            print("Congratulations! You now have a pet wolf, it will eventually grow to be a loyal and fearsome beast.")
+            time.sleep(1)
+            wolfName = input("What do you wish to name your companion?")
+            wolf = True
+            time.sleep(1)
+            print(wolfName + " it is!")
+
+            courage += 5
+            honor += 5
+
+        if yn == "n":
+            print("You decline the wolf and leave it to suffer")
+            wolf = False
+            time.sleep(1)
+            print("Frustrated, it bites you and mauls you. It is much fiercer than you expected but you are able to fight it off, but not without sustaining major injuries.")
+
+            courage -= 5
+            honor += 5
+
+    if randomNumber == 4:
+        if yn == 'y':
+            print("You choose to fight the beast!")
+            if wolf == False:
+                chanceOfWinning = 3
+
+            else:
+                chanceOfWinning = 2
+
+            success = random.randint(0,chanceOfWinning)
+            if success == 1:
+                time.sleep(1)
+                if wolf == True:
+                    print("You and " + wolfName + " circle the ogre, " + wolfName + " attacks first, he leaps and lashes at the ogres eye.")
+                    time.sleep(1)
+                    print("While " + wolfName + " distracts the ogre you go behind and stab your blade into the ogre's back. The ogre falls to his death.")
+
+                else:
+                    print("You stare at the ogre and jump as high as you can. You land on the branch of a tree.")
+                    time.sleep(1)
+                    print("The ogre's eyes look for you, as you stealthily jump from one branch to another. Eventually you are behind the ogre.")
+                    time.sleep(1)
+                    print("You plunge your sword into the back of the ogre's head. The ogre dies.")
+
+            else:
+                time.sleep(1)
+                if wolf == True:
+                    print("You and " + wolfName + " circle the ogre." + "The ogre makes the first move, but also the last, as he throws you into the distant woods with his powerful arm. You die.")
+                    deaths += 1
+
+                else:
+                    print("You look at the ogre and with adrenaline pulsing through you, you run at him.")
+                    time.sleep(1)
+                    print("The ogre smiles and kicks you into the distance. You fall with a thud breaking all of your bones. You die")
+                    deaths += 1
+
+            courage += 15
+            foolhardy += 10
+
+        if yn == 'n':
+            print("You decide to avoid the ogre, and blend into the landscape.")
+            time.sleep(1)
+            print("The ogre looks for you but doesn't spot you behind the bush.")
+            time.sleep(1)
+            print("The ogre passes you.")
+
+            courage -= 10
+            foolhardy -= 10
 
     time.sleep(1)
     print("Your Compassion " + str(compassion))
