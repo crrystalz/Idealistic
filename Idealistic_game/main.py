@@ -34,7 +34,8 @@ encounters = [
     ["You approach a lake to collect water when you spot a pot of gold next to a tree.", "You look closer and notice a man in ragged clothes next to the pot", "'Please don't take my gold', the man begs, 'it's all I have'", "You look at the man, you could easily fight him and steal the gold if you wished.", "Will you steal his gold?"],
     ["You spot a cave, it has a gloomy and eerie feel to it.", "You stare at the mouth of the cave, it calls you in, and you wonder what may be inside", "Do you wish to enter the cave?"],
     ["A young wolf approaches you.", "It appears to be an orphan.", "If you help it it may help in upcoming fights, but it will force you to feed it.", "Do you wish to adopt the wolf?"],
-    ["An ogre thunders toward you, he measured up to 8 feet in size and board a massive club.", "Do you fight or run? [fight = y / run = n]"]
+    ["An ogre thunders toward you, he measured up to 8 feet in size and board a massive club.", "Do you fight or run? [fight = y / run = n]"],
+    ["You spot a valiant warrior.", "He carries a long sword and rides on a horse." "'I challenge you to a duel!', he says", "Do you wish to fight him?"]
 
 ]
 
@@ -144,7 +145,7 @@ while True:
             print("You decline the wolf and leave it to suffer")
             wolf = False
             time.sleep(1)
-            print("Frustrated, it bites you and mauls you. It is much fiercer than you expected but you are able to fight it off, but not without sustaining major injuries.")
+            print("Frustrated, it bites you and mauls you. The wolf is much fiercer than you expected but you are able to fight it off, but not without sustaining major injuries.")
 
             courage -= 5
             honor += 5
@@ -153,10 +154,10 @@ while True:
         if yn == 'y':
             print("You choose to fight the beast!")
             if wolf == False:
-                chanceOfWinning = 3
+                chanceOfWinning = 2
 
             else:
-                chanceOfWinning = 2
+                chanceOfWinning = 1
 
             success = random.randint(0,chanceOfWinning)
             if success == 1:
@@ -177,7 +178,8 @@ while True:
                 time.sleep(1)
                 if wolf == True:
                     print("You and " + wolfName + " circle the ogre." + "The ogre makes the first move, but also the last, as he throws you into the distant woods with his powerful arm. You die.")
-                    deaths += 1
+                    deaths \
+                        += 1
 
                 else:
                     print("You look at the ogre and with adrenaline pulsing through you, you run at him.")
@@ -197,6 +199,27 @@ while True:
 
             courage -= 10
             foolhardy -= 10
+
+    if randomNumber == 5:
+        if yn == 'y':
+            if wolf == True:
+                print("You charge, you command your wolf to bite at the horse, in hopes you could make the warrior fall")
+                time.sleep(1.5)
+                print(wolfName + "Bites at the horse but the horse doesn't fall. The warrior charges at you and beheads you with his mighty sword.")
+
+            else:
+                print("You charge at the warrior, your sword drawn. A mighty sword fight ensues but it ends with the warrior chopping of your head.")
+
+            honor += 15
+            foolhardy += 10
+            courage += 10
+
+        if yn == 'n':
+            print("You walk away knowing that this was a fight you could never win.")
+
+            honor -= 10
+            foolhardy -= 15
+            courage -= 5
 
     time.sleep(1)
     print("Your Compassion " + str(compassion))
