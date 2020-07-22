@@ -240,10 +240,10 @@ while True:
             foolhardy -= 5
             defense = True
 
-        if yn = 'n':
+        if yn == 'n':
             print("Foolishly, you leave the chest plate behind for no reason whatsoever.")
             foolhardy += 5
-            
+
     print()
     time.sleep(1)
     print("Your Compassion " + str(compassion))
