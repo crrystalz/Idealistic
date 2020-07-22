@@ -39,8 +39,8 @@ encounters = [
     ["A young wolf approaches you.", "It appears to be an orphan.", "If you help it it may help in upcoming fights, but it will force you to feed it.", "Do you wish to adopt the wolf?"],
     ["An ogre thunders toward you, he measured up to 8 feet in size and board a massive club.", "Do you fight or run? [fight = y / run = n]"],
     ["You spot a valiant warrior.", "He carries a long sword and rides on an impressive black steed." "'I challenge you to a duel!', he says", "Do you wish to fight him?"],
-    ["You find a chest plate made of a strong metal.", "Do you wish to put it on?", "[Chest plate - Increases your defense stats!]"]
-
+    ["You find a chest plate made of a strong metal.", "Do you wish to put it on?", "[Chest plate - Increases your defense stats!]"],
+    ["You find a sharp sword made of a strong metal.", "Do you wish to equip it?", "[Sharp Sword - Increases your attack stats!]"]
 ]
 
 wolf = False
@@ -242,6 +242,16 @@ while True:
 
         if yn == 'n':
             print("Foolishly, you leave the chest plate behind for no reason whatsoever.")
+            foolhardy += 5
+
+    if randomNumber == 7:
+        if yn == 'y':
+            print("You drop your old sword and swing your new blade. It is light and sharp and you feel you cut anything down with your new blade.")
+            foolhardy -= 5
+            attack = True
+
+        if yn == 'n':
+            print("Foolishly, you leave the blade behind for no reason whatsoever.")
             foolhardy += 5
 
     print()
