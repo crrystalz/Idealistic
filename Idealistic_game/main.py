@@ -61,7 +61,7 @@ while True:
         print(event)
 
     time.sleep(1)
-    yn = input("[y/n]")
+    yn = input("[y/n]").lower()
 
     if randomNumber == 0:
         if yn == 'y':
