@@ -39,6 +39,7 @@ encounters = [
 
 ]
 
+wolf = False
 day = 1
 numbersPicked = []
 
