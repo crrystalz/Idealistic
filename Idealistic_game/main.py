@@ -8,6 +8,9 @@ courage = 50
 honor = 50
 deaths = 0
 
+attack = False
+defense = False
+
 print(" _____ _____  ______          _      _____  _____ _______ _____ _____  ")
 print(" |_   _|  __ \|  ____|   /\   | |    |_   _|/ ____|__   __|_   _/ ____|")
 print("   | | | |  | | |__     /  \  | |      | | | (___    | |    | || |     ")
@@ -35,7 +38,8 @@ encounters = [
     ["You spot a cave, it has a gloomy and eerie feel to it.", "You stare at the mouth of the cave, it calls you in, and you wonder what may be inside", "Do you wish to enter the cave?"],
     ["A young wolf approaches you.", "It appears to be an orphan.", "If you help it it may help in upcoming fights, but it will force you to feed it.", "Do you wish to adopt the wolf?"],
     ["An ogre thunders toward you, he measured up to 8 feet in size and board a massive club.", "Do you fight or run? [fight = y / run = n]"],
-    ["You spot a valiant warrior.", "He carries a long sword and rides on a horse." "'I challenge you to a duel!', he says", "Do you wish to fight him?"]
+    ["You spot a valiant warrior.", "He carries a long sword and rides on an impressive black steed." "'I challenge you to a duel!', he says", "Do you wish to fight him?"],
+    ["You find a chest plate made of a strong metal.", "Do you wish to put it on?", "[Chest plate - Increases your defense stats!]"]
 
 ]
 
@@ -154,14 +158,23 @@ while True:
     if randomNumber == 4:
         if yn == 'y':
             print("You choose to fight the beast!")
-            if wolf == False:
-                chanceOfWinning = 2
 
-            else:
-                chanceOfWinning = 1
+            chanceOfWinning = 10
+
+            if wolf == True:
+                chanceOfWinning -= 2
+
+            if defense == True:
+                chanceOfWinning -= 2
+
+            if attack == True:
+                chanceOfWinning -= 2
+
+            chanceOfWinning = chanceOfWinning
 
             success = random.randint(0,chanceOfWinning)
-            if success == 1:
+
+            if success == 1 or success == 2 or success == 3 or success == 4 or success == 5:
                 time.sleep(1)
                 if wolf == True:
                     print("You and " + wolfName + " circle the ogre, " + wolfName + " attacks first, he leaps and lashes at the ogres eye.")
@@ -221,6 +234,16 @@ while True:
             foolhardy -= 15
             courage -= 5
 
+    if randomNumber == 6:
+        if yn == 'y':
+            print("You put your chest plate on, and feel more protected with the sheet of metal protecting your chest.")
+            foolhardy -= 5
+            defense = True
+
+        if yn = 'n':
+            print("Foolishly, you leave the chest plate behind for no reason whatsoever.")
+            foolhardy += 5
+            
     print()
     time.sleep(1)
     print("Your Compassion " + str(compassion))
