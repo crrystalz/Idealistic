@@ -179,8 +179,7 @@ while True:
                 time.sleep(1)
                 if wolf == True:
                     print("You and " + wolfName + " circle the ogre." + "The ogre makes the first move, but also the last, as he throws you into the distant woods with his powerful arm. You die.")
-                    deaths \
-                        += 1
+                    deaths += 1
 
                 else:
                     print("You look at the ogre and with adrenaline pulsing through you, you run at him.")
@@ -222,6 +221,7 @@ while True:
             foolhardy -= 15
             courage -= 5
 
+    print()
     time.sleep(1)
     print("Your Compassion " + str(compassion))
     time.sleep(1)
