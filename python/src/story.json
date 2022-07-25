@@ -7,17 +7,39 @@
                     {   
                         "prev_scenes" : [-1],
                         "modifiers" : [],
-                        "answer" : "y",
+                        "answer" : "",
                         "next_scene": 0
                     },
+
                     {   
                         "prev_scenes" : [0],
                         "modifiers" : [],
                         "answer" : "y",
-                        "next_scene": -2
+                        "next_scene": 1
+                    },
+
+                    {
+                        "prev_scenes" : [1],
+                        "modifiers" : [],
+                        "answer" : "",
+                        "next_scene": -2 
+                    },
+
+                    {   
+                        "prev_scenes" : [0],
+                        "modifiers" : [],
+                        "answer" : "n",
+                        "next_scene": 2
+                    },
+
+                    {
+                        "prev_scenes" : [2],
+                        "modifiers" : [],
+                        "answer" : "",
+                        "next_scene": -2 
                     }
                 ],
-                "scene":
+                "scenes":
                 [
                     {
                         "text" : [
@@ -26,15 +48,26 @@
                             "How can I trust you, you ask.",
                             "'I'm just an old lady, will you help me?!', she says."
                         ],
-                        "interactive" : "T"
+                        "interactive" : "T",
+                        "result" : [0, 0, 0, 0, 0, 0]
                     },
 
                     {
                         "text" : [
-                            "dfsdfs",
-                            "fffds"
+                            "You approach her to give her water but she leaps and grabs you by the throat",
+                            "She smiles and suffocates you to death",
+                            "Right before you die, you see her turn into a disgusting monster and then you hear the sickening crunch of your bones"
                         ],
-                        "interactive" : "F"
+                        "interactive" : "F",
+                        "result" : [5, 15, 0, 0, 0, 1]
+                    },
+
+                    {
+                        "text" : [
+                            "You feel suspicious of the woman, and for good reason. Moments later, the woman dies and her body morphs into a disgusting creature"
+                        ],
+                        "interactive" : "F",
+                        "result" : [-10, -15, 0, 0, 0, 1]
                     }
                 ]
             }
