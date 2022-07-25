@@ -21,7 +21,7 @@ def game_intro():
         "   | | | |  | | |__     /  \  | |      | | | (___    | |    | || |     ",
         "   | | | |  | |  __|   / /\ \ | |      | |  \___ \   | |    | || |     ",
         "  _| |_| |__| | |____ / ____ \| |____ _| |_ ____) |  | |   _| || |____ ",
-        " |_____|_____/|______/_/    \_\______|_____|_____/   |_|  |_____\_____|"
+        " |_____|_____/|______/_/    \_\______|_____|_____/   |_|  |_____\_____|",
     ]
 
     [print(line) for line in idealistic_title]
@@ -33,11 +33,19 @@ def game_intro():
     time.sleep(1)
     name = input("What is your name, lost one? ")
     time.sleep(1)
-    print(
-        "What a peculiar name... Anyhow, "
-        + name
-        + ", now that you have entered The Forest Of The Lost Souls you are trapped here unless you are the Idealistic One from The Great Prophecy"
-    )
+    if name == "crrystalz" or "rrishi":
+        print(
+            "What a beauitiful name!",
+            "Well, "
+            + name
+            + ", now that you have entered The Forest Of The Lost Souls you are trapped here unless you are the Idealistic One from The Great Prophecy",
+        )
+    else:
+        print(
+            "What a peculiar name... Anyhow, "
+            + name
+            + ", now that you have entered The Forest Of The Lost Souls you are trapped here unless you are the Idealistic One from The Great Prophecy"
+        )
     time.sleep(2)
     print("I wish you good luck while you strive to survive in the forest")
     time.sleep(1.5)
@@ -48,7 +56,7 @@ def game_intro():
     return
 
 
-def play_encounter(encounter, curr_scene_index = -1):
+def play_encounter(encounter, curr_scene_index=-1):
     global answer
 
     global compassion
@@ -98,6 +106,7 @@ def play_encounter(encounter, curr_scene_index = -1):
         else:
             return
 
+
 game_intro()
 
 compassion = 50
@@ -125,28 +134,40 @@ while game:
 
     encounter = encounters[encounter_index]
 
-    slow_print([
-        "",
-        "DAY " + str(day),
-        "",
-    ])
+    slow_print(
+        [
+            "",
+            "DAY " + str(day),
+            "",
+        ]
+    )
 
     play_encounter(encounter)
 
-    slow_print([
-                ""
-                "Your compassion: " + str(compassion),
-                "Your foolhardy: " + str(foolhardy),
-                "Your greed: " + str(greed),
-                "Your courage: " + str(courage),
-                "Your honor: " + str(honor),
-                "Your deaths: " + str(deaths),
-                ""
-    ])
+    slow_print(
+        [
+            "" "Your compassion: " + str(compassion),
+            "Your foolhardy: " + str(foolhardy),
+            "Your greed: " + str(greed),
+            "Your courage: " + str(courage),
+            "Your honor: " + str(honor),
+            "Your deaths: " + str(deaths),
+            "",
+        ]
+    )
 
     num_completed_encounters += 1
-    
+
     day += 1
 
     if num_completed_encounters == num_encounters:
         game = False
+
+slow_print(
+    [
+        "",
+        "You descended into the underworld... without completing The Great Prophecy",
+        "Cause: Old Age",
+        "GAME OVER!",
+    ]
+)
