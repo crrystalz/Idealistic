@@ -146,7 +146,8 @@ while game:
 
     slow_print(
         [
-            "" "Your compassion: " + str(compassion),
+            "",
+            "Your compassion: " + str(compassion),
             "Your foolhardy: " + str(foolhardy),
             "Your greed: " + str(greed),
             "Your courage: " + str(courage),
@@ -168,6 +169,16 @@ slow_print(
         "",
         "You descended into the underworld... without completing The Great Prophecy",
         "Cause: Old Age",
-        "GAME OVER!",
     ]
 )
+
+game_over = [
+    " _____   ___  ___  ___ _____   _____  _   _ ___________ ",
+    "|  __ \ / _ \ |  \/  ||  ___| |  _  || | | |  ___| ___ \\",
+    "| |  \// /_\ \| .  . || |__   | | | || | | | |__ | |_/ /",
+    "| | __ |  _  || |\/| ||  __|  | | | || | | |  __||    / ",
+    "| |_\ \| | | || |  | || |___  \ \_/ /\ \_/ / |___| |\ \ ",
+    " \____/\_| |_/\_|  |_/\____/   \___/  \___/\____/\_| \_|"
+]
+
+[print(line) for line in game_over]
