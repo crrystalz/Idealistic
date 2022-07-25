@@ -38,7 +38,7 @@ encounters = [
     ["You spot a cave, it has a gloomy and eerie feel to it.", "You stare at the mouth of the cave, it calls you in, and you wonder what may be inside", "Do you wish to enter the cave?"],
     ["A young wolf approaches you.", "It appears to be an orphan.", "If you help it it may help in upcoming fights, but it will force you to feed it.", "Do you wish to adopt the wolf?"],
     ["An ogre thunders toward you, he measured up to 8 feet in size and board a massive club.", "Do you fight or run? [fight = y / run = n]"],
-    ["You spot a valiant warrior.", "He carries a long sword and rides on an impressive black steed.", "'I challenge you to a duel!', he says", "Do you wish to fight him?"],
+    ["You spot a valiant warrior.", "He carries a long sword and rides on an impressive black steed." "'I challenge you to a duel!', he says", "Do you wish to fight him?"],
     ["You find a chest plate made of a strong metal.", "Do you wish to put it on?", "[Chest plate - Increases your defense stats!]"],
     ["You find a sharp sword made of a strong metal.", "Do you wish to equip it?", "[Sharp Sword - Increases your attack stats!]"]
 ]

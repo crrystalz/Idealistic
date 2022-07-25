@@ -1,0 +1,7 @@
+{ 
+    "story" : [{
+        "conditions" : ["wolf", "sword", "wolf_sword"]
+    }],
+    "prompts" : [],
+
+}

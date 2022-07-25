@@ -1,0 +1,15 @@
+{ 
+    "scenarios" : [
+        {
+            "conditions" : ["wolf", "sword"],
+            "prompt" : 3
+        },
+        {
+            "conditions" : ["wolf"],
+            "prompt" : 6
+        }
+    ],
+    "continuations" : [
+        
+    ]
+}

@@ -1,0 +1,33 @@
+{
+"encounters":
+    [
+        {
+            "intro" :
+            [
+                "You see a old lady approach you.",
+                "'Help!', she cries. 'I am in need of water.. please!'",
+                "How can I trust you, you ask.",
+                "'I'm just an old lady, will you help me?!', she says."
+            ],
+            "scenarios" :
+            [   
+                {   
+                    "prev_scenes" : [1],
+                    "modifiers" : ["wolf", "sword"],
+                    "answer" : "y",
+                    "next_scene": 0
+                },
+                {   
+                    "prev_scenes" : [3],
+                    "modifiers" : ["wolf"],
+                    "answer" : "y",
+                    "next_scene": 4
+                }
+            ],
+            "scene":
+            [
+
+            ]
+        }
+    ]
+}
